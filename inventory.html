@@ -74,13 +74,17 @@
             <h2>Add Item:</h2>
             <form>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field">
                         <label for="nameInput">Name</label>
                         <input type="text" id="nameInput" class="validate" data-length="32" required>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field">
                         <label for="quantityInput">Quantity</label>
-                        <input type="number" id="quantityInput" value=1 required>
+                        <input type="number" id="quantityInput" class="validate" value=1 required>
+                    </div>
+                    <div class="input-field">
+                        <label for="descriptionInput">Description</label>
+                        <input type="text" id="descriptionInput" data-length="100">
                     </div>
                 </div>
                 <button class="btn green">
