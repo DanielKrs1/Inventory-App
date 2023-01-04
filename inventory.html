@@ -6,33 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Document</title>
+    <title>Inventory</title>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">M.AutoInit();</script>
     <div class="container">
         <div class="section">
-            <h1>Stuff Inventory:</h1>
+            <h1>Inventory:</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Item</th>
-                        <th>Quanitiy</th>
-                        <th></th>
+                        <th>Quantity</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Amogus</td>
-                        <td>9000</td>
+                        <td>200</td>
+                        <td>The sussiest of bakas</td>
                         <td>
-                            <a class="btn" href="itemEdit.html">
-                                <i class="material-icons right">arrow_forward</i>
-                                Edit
+                            <a class="btn blue" href="itemEdit.html">
+                                <i class="material-icons right">edit</i>
+                                View/Edit
+                            </a>
+                            <a class="btn red">
+                                <i class="material-icons right">delete</i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Morbius 2</td>
+                        <td>7</td>
+                        <td>Truly one of the sequels of all time</td>
+                        <td>
+                            <a class="btn blue" href="itemEdit.html">
+                                <i class="material-icons right">edit</i>
+                                View/Edit
+                            </a>
+                            <a class="btn red">
+                                <i class="material-icons right">delete</i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Person who Asked</td>
+                        <td>0</td>
+                        <td>Nobody asked</td>
+                        <td>
+                            <a class="btn blue" href="itemEdit.html">
+                                <i class="material-icons right">edit</i>
+                                View/Edit
+                            </a>
+                            <a class="btn red">
+                                <i class="material-icons right">delete</i>
+                                Delete
                             </a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="section" id="stuffAdd">
+            <h2>Add Item:</h2>
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="nameInput">Name</label>
+                        <input type="text" id="nameInput" class="validate" data-length="32" required>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="quantityInput">Quantity</label>
+                        <input type="number" id="quantityInput" value=1 required>
+                    </div>
+                </div>
+                <button class="btn green">
+                    <i class="material-icons right">add</i>
+                    Add
+                </button>
+            </form>
         </div>
     </div>
 </body>

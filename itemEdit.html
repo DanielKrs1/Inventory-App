@@ -6,11 +6,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <title>Edit Item</title>
+        <title>View/Edit Item</title>
     </head>
     <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">M.AutoInit();</script>
         <div class="container">
-            <h1>to be finished because im lazy lol</h1>
+            <div class="section flow-text">
+                <h1>View Item</h1>
+                <a class="btn blue" href="inventory.html">
+                    <i class="material-icons left">arrow_back</i>
+                    Back to Inventory
+                </a>
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <td>Amogus</td>
+                    </tr>
+                    <tr>
+                        <th>Quantity:</th>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td>The sussiest of bakas</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h1>Edit Item</h1>
+                <form>
+                    <div class="input-field">
+                        <label for="nameInput">Name</label>
+                        <input type="text" id="nameInput" class="validate" data-length="32" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="quantityInput">Quantity</label>
+                        <input type="number" id="quantityInput" value=1 required>
+                    </div>
+                    <div class="input-field">
+                        <label for="descriptionInput">Description</label>
+                        <input type="text" id="descriptionInput" class="validate" data-length="100">
+                    </div>
+                    <button class="btn green">
+                        <i class="material-icons right">save</i>
+                        Save
+                    </button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
