@@ -21,10 +21,9 @@ const insert_stuff_table_sql = `
     VALUES 
         (?, ?, ?);
 `
-db.execute(insert_stuff_table_sql, ['Widgets', '5', 'Widgets are cool! You can do ... so many... different things... with them...']);
-db.execute(insert_stuff_table_sql, ['Gizmos', '100', null]);
-db.execute(insert_stuff_table_sql, ['Thingamajig', '12345', 'Not to be confused with a Thingamabob']);
-db.execute(insert_stuff_table_sql, ['Thingamabob', '54321', 'Not to be confused with a Thingamajig']);
+db.execute(insert_stuff_table_sql, ['Amogus', '7', 'The sussiest of bakas']);
+db.execute(insert_stuff_table_sql, ['Morbius 2', '200', 'Truly one of the sequels of all time']);
+db.execute(insert_stuff_table_sql, ['Person who Asked', '0', 'Nobody asked']);
 
 /**** Read the sample items inserted ****/
 const read_stuff_table_sql = "SELECT * FROM stuff";
