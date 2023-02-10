@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 // Configure Express to parse URL-encoded POST request bodies (traditional forms)
 app.use( express.urlencoded({ extended: false }) );
 //set up helmet middleware to pretect against basic vulnerabilities
-app.use(helmet);
+app.use(helmet());
 // define a route for the default home page
 app.get( "/", ( req, res ) => {
     res.render('index');
