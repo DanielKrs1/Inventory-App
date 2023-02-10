@@ -1,9 +1,10 @@
 //set up the server
 const express = require( "express" );
 const logger = require("morgan");
-const db = require("./db/db_connection")
+const db = require("./db/db_pool")
+const helmet = require("helmet")
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
@@ -19,7 +20,8 @@ app.use(logger("dev"));
 app.use(express.static(__dirname + '/public'));
 // Configure Express to parse URL-encoded POST request bodies (traditional forms)
 app.use( express.urlencoded({ extended: false }) );
-
+//set up helmet middleware to pretect against basic vulnerabilities
+app.use(helmet);
 // define a route for the default home page
 app.get( "/", ( req, res ) => {
     res.render('index');
