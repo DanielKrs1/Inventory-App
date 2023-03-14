@@ -5,13 +5,14 @@ const drop_stuff_table_sql = "DROP TABLE IF EXISTS `stuff`;"
 db.execute(drop_stuff_table_sql);
 
 const create_stuff_table_sql = `
-    CREATE TABLE stuff (
-        id INT NOT NULL AUTO_INCREMENT,
-        item VARCHAR(45) NOT NULL,
-        quantity INT NOT NULL,
-        description VARCHAR(150) NULL,
-        PRIMARY KEY (id)
-    );`
+CREATE TABLE stuff (
+    id INT NOT NULL AUTO_INCREMENT,
+    item VARCHAR(45) NOT NULL,
+    quantity INT NOT NULL,
+    description VARCHAR(150) NULL,
+    userid VARCHAR(50) NULL,
+    PRIMARY KEY (id)
+);`
 db.execute(create_stuff_table_sql);
 
 /**** Create some sample items ****/
@@ -21,9 +22,6 @@ const insert_stuff_table_sql = `
     VALUES 
         (?, ?, ?);
 `
-db.execute(insert_stuff_table_sql, ['Amogus', '7', 'The sussiest of bakas']);
-db.execute(insert_stuff_table_sql, ['Morbius 2', '200', 'Truly one of the sequels of all time']);
-db.execute(insert_stuff_table_sql, ['Person who Asked', '0', 'Nobody asked']);
 
 /**** Read the sample items inserted ****/
 const read_stuff_table_sql = "SELECT * FROM stuff";

@@ -13,6 +13,35 @@
 </head>
 <body>
     <div class="container">
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo">Stuff Manager</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="desktop-nav" class="right hide-on-med-and-down">
+                        <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                        <li><a href="/inventory"><i class="material-icons left">list</i>Inventory</a></li>
+                        <% if (isLoggedIn) { %>
+                            <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+                            <li><a href="/logout" class="btn red">Logout</a></li>                        
+                        <% } else { %>
+                            <li><a href="/login" class="btn blue">Login</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </nav>
+            <ul id="mobile-nav" class="sidenav">
+                 <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                 <li><a href="/stuff"><i class="material-icons left">list</i>Inventory</a></li>
+                 <% if (isLoggedIn) { %>
+                    <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+                    <li><a href="/logout" class="btn red">Logout</a></li>                        
+                <% } else { %>
+                    <li><a href="/login" class="btn blue">Login</a></li>
+                <% } %>
+            </ul>
+        </header>
+
         <div class="section">
             <h2>Inventory:</h2>
             <table>
