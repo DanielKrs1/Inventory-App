@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <link rel="stylesheet" href="/stylesheets/stuffStyle.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
+    </script>
 </head>
 
 <body>
@@ -46,13 +54,42 @@
     </header>
     <!-- Actual page content! -->
     <div class="container">
-        <h1>Welcome!</h1>
-        <img src="/images/clutter-clipart.jpg" width="200" height="200">
-        <h2>Let's manage your stuff together.</h2>
-        <a class="btn" href="/stuff">
-            <i class="material-icons right">arrow_forward</i>
-            Get started!
-        </a>
+        <div class="section" id="stuffList">
+            <h1>Manage Categories:</h1>
+            <h6>"None" and "Other" are always available by default.<h6>
+            <h6>Be careful! If you delete an item's category, the item will be deleted too.<h6>
+            <table>
+                <tbody>
+                    <% for (let i = 0; i < categories.length; i++) { %>
+                        <tr>
+                            <td><%= categories[i].name %></td>
+                            <% if (categories[i].global == 0) { %>
+                                <td>
+                                    <a class="btn-small waves-effect waves-light red" href="/categories/<%=categories[i].id %>/delete">
+                                        <i class="material-icons right">delete</i>
+                                        Delete
+                                    </a>
+                                </td>
+                            <% } %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" id="stuffAdd">
+            <h2>Add Category:</h2>
+            <form method="post" action="/categories"> <!-- default action is the page's URL --> 
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="categoryInput">Category Name:</label>
+                        <input type="text" name="name" id="categoryInput" class="validate" data-length="32" required>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit"><i
+                        class="material-icons right">send</i>Submit</button>
+            </form>
+        </div>
     </div>
 
     <!-- Materialize JavaScript -->
@@ -60,6 +97,7 @@
 
     <!-- initialize Materialize elements -->
     <script src="/scripts/materializeAutoinit.js"></script>
+
 </body>
 
 </html>
